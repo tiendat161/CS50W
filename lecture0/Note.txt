@@ -3,5 +3,3 @@ Specificity: (priority list)
 2. id
 3. class
 4. type
-
-CSS Selectors:
