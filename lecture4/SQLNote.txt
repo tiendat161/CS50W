@@ -1,0 +1,48 @@
+# Create sql file:
+touch flights.sql
+
+# Run sqlite3 (have sqlite3 installed):
+sqlite3 flights.sql
+
+# Create table:
+CREATE TABLE flights (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    origin TEXT NOT NULL,
+    destination TEXT NOT NULL,
+    duration INTEGER NOT NULL
+);
+
+# Show all tables in database:
+.tables
+
+# Get data from table:
+SELECT * FROM flights;
+SELECT * FROM flights WHERE duration > 500;
+SELECT * FROM flights WHERE duration > 500 AND destination = "Paris";
+SELECT * FROM flights WHERE duration > 500 OR destination = "Paris";
+SELECT * FROM flights WHERE origin in ("New York", "Lima");
+
+
+# Insert into table:
+INSERT INTO flights (origin, destination, duration) VALUES ("New York", "London", 415);
+
+# Format table nicer in SQLite:
+.mode columns
+.headers yes
+
+# Functions:
+AVERAGE, COUNT, MAX, MIN, SUM, ...
+
+# Update data:
+UPDATE flights
+    SET duration = 430
+    WHERE origin = "New York"
+    AND destination = "London";
+
+# Delete data:
+DELETE FROM flights WHERE desination = "Tokyo";
+
+# Other Clauses:
+LIMIT, ORDER BY, GROUP BY, HAVING, ...
+
+
