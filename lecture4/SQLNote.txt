@@ -45,4 +45,17 @@ DELETE FROM flights WHERE desination = "Tokyo";
 # Other Clauses:
 LIMIT, ORDER BY, GROUP BY, HAVING, ...
 
+# JOIN:
+JOIN / INNER JOIN, LEFT OUTER JOIN, RIGHT OUTER JOIN, FULL OUTER JOIN
+
+SELECT first, origin, destination 
+    FROM flights JOIN passengers 
+    ON passengers.flight_id = flights.id;
+
+# Create an index on table to optimize queries: 
+CREATE INDEX name_index ON passengers (last);
+
+# Injection:
+SELECT * FROM users
+WHERE username = "hacker"--" AND password = "";
 
